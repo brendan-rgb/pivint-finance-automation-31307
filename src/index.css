@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* PIVINT Design System - CFO-Focused Automation Platform */
+    
+    /* Primary Colors */
+    --background: 0 0% 100%;
+    --foreground: 201 24% 37%; /* Slate Gray for body text */
+    
+    /* Brand Colors */
+    --navy: 201 58% 11%; /* Deep Navy #0C1E2C */
+    --steel: 201 54% 23%; /* Steel Blue #1E3F58 */
+    --teal: 177 100% 36%; /* Teal #00B6B0 */
+    --teal-dark: 177 100% 29%; /* Darker teal for hover */
+    
+    /* Neutral Palette */
+    --neutral-light: 210 20% 98%; /* Off-white #F9FAFB */
+    --neutral-mid: 207 10% 61%; /* Slate Gray #5E6B76 */
+    --pale-blue: 200 50% 96%; /* #F1F6F9 */
+    --divider: 210 14% 91%; /* Light Gray #E5E8EB */
+    
+    /* Success/Highlight */
+    --success: 166 45% 76%; /* Soft Green #A1E3D8 */
+    
+    /* Semantic Tokens */
+    --primary: 177 100% 36%; /* Teal */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 201 54% 23%; /* Steel Blue */
+    --secondary-foreground: 0 0% 100%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 201 24% 37%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 201 24% 37%;
+    
+    --muted: 210 20% 98%;
+    --muted-foreground: 207 10% 61%;
+    
+    --accent: 177 100% 36%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 210 14% 91%;
+    --input: 210 14% 91%;
+    --ring: 177 100% 36%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradient Backgrounds */
+    --gradient-hero: linear-gradient(135deg, hsl(201, 58%, 11%) 0%, hsl(201, 54%, 23%) 100%);
+    --gradient-security: linear-gradient(135deg, hsl(201, 58%, 11%) 0%, hsl(201, 54%, 23%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.12);
+    --shadow-card-hover: 0 6px 16px rgba(0, 0, 0, 0.15);
+    --shadow-button: 0 2px 8px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 12px rgba(0, 182, 176, 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.15s ease;
+    --transition-medium: all 0.25s ease-in-out;
+    --transition-scroll: all 0.5s ease-in-out;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Source Sans 3', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+  
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(201, 58%, 11%) 0%, hsl(201, 54%, 23%) 100%);
+  }
+  
+  .bg-gradient-security {
+    background: linear-gradient(135deg, hsl(201, 58%, 11%) 0%, hsl(201, 54%, 23%) 100%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
